@@ -112,11 +112,6 @@ public class ClientHints {
         }).collect(Collectors.toList());
     }
 
-    public Optional<String> getUserAgentFullVersion() {
-        return Optional.ofNullable(clientHints.get(ClientHintsHttpHeaders.USER_AGENT_FULL_VERSION))
-                .map(this::parseSfString);
-    }
-
     /**
      * @see <a href="https://datatracker.ietf.org/doc/html/rfc8941#section-3.1">Structured Field Values for HTTP</a>
      */

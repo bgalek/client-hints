@@ -33,7 +33,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
       - name: Test with Gradle
-        run: ./gradlew --no-daemon --continue check
+        run: ./gradlew check
 
       - name: Jacoco
         run: ./gradlew jacocoTestReport
@@ -42,6 +42,7 @@ jobs:
         uses: codecov/codecov-action@v1
 
       - name: Analyze with SonarCloud
+        if: github.ref == 'refs/heads/main'
         run: ./gradlew sonarqube -Dsonar.login=${SONAR_TOKEN} -Dsonar.projectKey=bgalek_client-hints -Dsonar.organization=bgalek-github -Dsonar.host.url=https://sonarcloud.io
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

@@ -14,7 +14,7 @@ class ClientHintsTest {
 
     @Test
     @DisplayName("should parse http headers map")
-    void firstTest() {
+    void headersParsingTest() {
         //given
         Map<String, String> headers = Map.ofEntries(
                 Map.entry("Content-Type", "application/json"),
@@ -25,7 +25,6 @@ class ClientHintsTest {
                 Map.entry("Sec-CH-UA-Platform-Version", "11"),
                 Map.entry("Sec-CH-UA-Arch", "arm"),
                 Map.entry("Sec-CH-UA", "\"Chromium\";v=\"84\", \"Google Chrome\";v=\"84\""),
-                Map.entry("Sec-CH-UA-Full-Version", "84.0.4143.2"),
                 Map.entry("Device-Memory", "0.25"),
                 Map.entry("Downlink", "300"),
                 Map.entry("ECT", "4g"),
@@ -43,7 +42,6 @@ class ClientHintsTest {
         Assertions.assertEquals("11", clientHints.getPlatformVersion().orElseThrow());
         Assertions.assertEquals("arm", clientHints.getArchitecture().orElseThrow());
         Assertions.assertEquals(List.of(new UserAgent("Chromium", "84"), new UserAgent("Google Chrome", "84")), clientHints.getUserAgent());
-        Assertions.assertEquals("84.0.4143.2", clientHints.getUserAgentFullVersion().orElseThrow());
         Assertions.assertEquals(0.25, clientHints.getDeviceMemory().orElseThrow());
         Assertions.assertEquals(300.0, clientHints.getDownlink().orElseThrow());
         Assertions.assertEquals("4g", clientHints.getEffectiveConnectionType().orElseThrow());
