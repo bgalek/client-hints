@@ -64,8 +64,6 @@ publishing {
         create<MavenPublication>("sonatype") {
             artifactId = "client-hints"
             from(components["java"])
-            artifact(tasks["sourcesJar"])
-            artifact(tasks["javadocJar"])
             versionMapping {
                 usage("java-api") {
                     fromResolutionOf("runtimeClasspath")
