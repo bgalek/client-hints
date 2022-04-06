@@ -4,7 +4,7 @@ plugins {
     signing
     jacoco
     id("org.sonarqube") version "3.2.0"
-    id("pl.allegro.tech.build.axion-release") version "1.13.2"
+    id("pl.allegro.tech.build.axion-release") version "1.13.6"
     id("com.adarshr.test-logger") version "3.0.0"
     id("io.github.gradle-nexus.publish-plugin") version "1.0.0"
 }
@@ -25,7 +25,8 @@ repositories {
 }
 
 dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
+    testImplementation(platform("org.junit:junit-bom:5.8.2"))
+    testImplementation("org.junit.jupiter:junit-jupiter-api")
     testImplementation("org.junit.jupiter:junit-jupiter-params")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
@@ -79,7 +80,7 @@ publishing {
                 licenses {
                     license {
                         name.set("The Apache License, Version 2.0")
-                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                        url.set("https://www.apache.org/licenses/LICENSE-2.0.txt")
                     }
                 }
                 developers {
