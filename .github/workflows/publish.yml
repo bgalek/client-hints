@@ -21,7 +21,7 @@ jobs:
           distribution: temurin
 
       - name: Gradle package cache
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v3
 
       - name: Publish to maven central
         run: ./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository
