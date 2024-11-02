@@ -4,6 +4,7 @@
 [![Build](https://github.com/bgalek/client-hints/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bgalek/client-hints/actions/workflows/ci.yml)
 ![Codecov](https://img.shields.io/codecov/c/github/bgalek/client-hints.svg?style=flat-square)
 ![GitHub Release Date](https://img.shields.io/github/release-date/bgalek/client-hints.svg?style=flat-square)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bgalek_client-hints&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=bgalek_client-hints)
 ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/bgalek/client-hints.svg?style=flat-square)
 
 
