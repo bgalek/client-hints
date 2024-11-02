@@ -21,11 +21,6 @@ jobs:
       - uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-      - if: github.ref == 'refs/heads/main'
-        run: ./gradlew sonarqube -Dsonar.login=${SONAR_TOKEN} -Dsonar.projectKey=bgalek_client-hints -Dsonar.organization=bgalek-github -Dsonar.host.url=https://sonarcloud.io
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   dependabot:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' && github.actor == 'dependabot[bot]' }}
