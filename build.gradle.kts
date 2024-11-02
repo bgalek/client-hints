@@ -41,22 +41,11 @@ tasks {
 
 tasks.withType<Test> {
     useJUnitPlatform()
-    testLogging {
-        events("passed", "skipped", "failed")
-    }
-}
-
-jacoco {
-    toolVersion = "0.8.6"
-    reportsDirectory.set(file("$buildDir/reports/jacoco"))
 }
 
 tasks.jacocoTestReport {
     reports {
         xml.required.set(true)
-        xml.outputLocation.set(file("$buildDir/reports/jacoco/report.xml"))
-        csv.required.set(false)
-        html.required.set(false)
     }
 }
 
